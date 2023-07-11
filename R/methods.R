@@ -526,7 +526,7 @@ predict.VFP <- function(object, model.no=NULL, newdata=NULL, alpha=.05,
 	)
 
 	if(is(pred, "try-error")) {
-
+	  model.no <- as.integer(substr(model, start = 7, 8))
 		#	pred <- newdata
 		parms <- object$Models[[num]]$coefficients
 		fun1 <- function(x, parms) return(rep(parms, length(x)))
